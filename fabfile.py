@@ -12,8 +12,18 @@ def check_whether_installed_via_brew_cask(c, package):
 
     return False
 
-
 @task
+def install_homebrew(c):
+    brew_available = c.run("which brew")
+
+    if brew_available.ok:
+        print("homebrew already installed :)")
+        return
+
+    c.run('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)')
+
+
+@task(pre=[install_homebrew])
 def install_virtualbox(c):
 
     if check_whether_installed_via_brew_cask(c, "virtualbox"):

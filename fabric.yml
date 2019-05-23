@@ -1,0 +1,3 @@
+run:
+  echo: true
+  replace_env: false

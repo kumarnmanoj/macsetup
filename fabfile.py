@@ -48,3 +48,11 @@ def install_minikube(c):
         return
 
     c.run("brew cask install minikube")
+
+@task
+def install_okta_cli(c):
+    c.run("curl 'https://raw.githubusercontent.com/oktadeveloper/okta-aws-cli-assume-role/master/bin/install.sh' --output okta_cli.sh")
+    c.run("echo $HOME/blah")
+    c.run("bash okta_cli.sh -i", hide=True)
+    c.run("echo 'export PATH=$HOME/.okta/bin:$PATH' >> $HOME/.mk_exports")
+    c.run("echo 'source $HOME/.okta/bash_functions' >> $HOME/.mk_functions")

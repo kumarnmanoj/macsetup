@@ -62,3 +62,11 @@ def install_eks_kubectl(c):
     c.run("curl -o ekskubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/darwin/amd64/kubectl")
     c.run("chmod a+x ekskubectl")
     c.sudo("mv ekskubectl /usr/local/bin/")
+
+
+# Refactor
+@task
+def install_aws_iam_authenticator(c):
+    c.run("curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/darwin/amd64/aws-iam-authenticator")
+    c.run("chmod a+x aws-iam-authenticator")
+    c.sudo("mv aws-iam-authenticator /usr/local/bin")

@@ -52,7 +52,13 @@ def install_minikube(c):
 @task
 def install_okta_cli(c):
     c.run("curl 'https://raw.githubusercontent.com/oktadeveloper/okta-aws-cli-assume-role/master/bin/install.sh' --output okta_cli.sh")
-    c.run("echo $HOME/blah")
     c.run("bash okta_cli.sh -i", hide=True)
     c.run("echo 'export PATH=$HOME/.okta/bin:$PATH' >> $HOME/.mk_exports")
     c.run("echo 'source $HOME/.okta/bash_functions' >> $HOME/.mk_functions")
+
+
+@task
+def install_eks_kubectl(c):
+    c.run("curl -o ekskubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/darwin/amd64/kubectl")
+    c.run("chmod a+x ekskubectl")
+    c.sudo("mv ekskubectl /usr/local/bin/")

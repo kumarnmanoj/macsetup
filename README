@@ -7,3 +7,6 @@ fab2 --prompt-for-sudo-password <task>
 
 To know the list of tasks
 fab2 -l
+
+
+### Ansible playbook inspired from - https://github.com/daemonza/setupmac

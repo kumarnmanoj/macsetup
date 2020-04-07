@@ -2,5 +2,22 @@
 - name: application installs
   include: homebrew.yml
 
+- name: Install brew applications
+  homebrew:
+    name: "{{ brew_applications }}"
+    state: present
+
+- name: Install cask applications
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ cask_applications }}"
+
+- name: Setup java tools
+  include: apps/java.yml
+
+- name: Setup python tools
+  include: apps/python.yml
+
 - name: Setup minikube
   include: apps/minikube.yml

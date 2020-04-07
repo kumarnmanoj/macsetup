@@ -1,0 +1,11 @@
+---
+brew_applications:
+  - wget
+  - telnet
+  - zsh
+  - jq
+  - autojump
+
+cask_applications:
+  - docker
+  - vagrant

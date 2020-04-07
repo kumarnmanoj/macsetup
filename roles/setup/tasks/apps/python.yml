@@ -1,0 +1,14 @@
+---
+- name: "Install pyenv"
+  homebrew:
+    name: pyenv
+    state: installed
+  tags:
+    - python
+
+- name: "Install pyenv virtualenv"
+  homebrew:
+    name: pyenv-virtualenv
+    state: installed
+  tags:
+    - python

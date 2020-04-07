@@ -1,0 +1,23 @@
+---
+- name: "Install JEnv"
+  homebrew:
+    name: jenv
+    state: installed
+  tags:
+    - java
+
+- name: "Install Jdk 8"
+  homebrew_cask:
+    name: adoptopenjdk8
+    state: installed
+  tags:
+    - java
+
+- name: "Install maven"
+  homebrew:
+    name: maven
+    state: installed
+  tags:
+    - java
+
+

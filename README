@@ -10,3 +10,5 @@ fab2 -l
 
 
 ### Ansible playbook inspired from - https://github.com/daemonza/setupmac
+
+https://daemonza.github.io/2017/03/06/using-ansible-to-automate-my-macbook-setup/

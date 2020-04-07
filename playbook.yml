@@ -1,0 +1,6 @@
+---
+
+- hosts: mac
+  roles:
+    - setup
+

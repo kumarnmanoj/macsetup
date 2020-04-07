@@ -1,0 +1,6 @@
+---
+- name: application installs
+  include: homebrew.yml
+
+- name: Setup minikube
+  include: apps/minikube.yml

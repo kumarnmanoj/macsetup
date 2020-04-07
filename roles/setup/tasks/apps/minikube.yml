@@ -1,0 +1,19 @@
+---
+
+- name: Install virtualbox
+  homebrew_cask:
+    name: virtualbox
+    state: present
+
+- name: Install kubectl
+  shell: |
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
+    chmod +x ./kubectl
+    mv ./kubectl /usr/local/bin/kubectl
+  args:
+    creates: /usr/local/bin/kubectl
+
+- name: Install minikube
+  homebrew:
+    name: minikube
+    state: present

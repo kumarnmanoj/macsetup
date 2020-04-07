@@ -12,6 +12,15 @@ def check_whether_installed_via_brew_cask(c, package):
 
     return False
 
+def check_whether_installed_via_brew(c, package):
+    cask_list_output = c.run('brew list | grep "{}"'.format(package))
+
+    if cask_list_output.ok and cask_list_output.stdout.strip() == package:
+        print("Seems {} is already installed".format(package))
+        return True
+
+    return False
+
 @task
 def install_homebrew(c):
     brew_available = c.run("which brew")
@@ -44,10 +53,10 @@ def install_kubectl(c):
 @task(pre=[install_virtualbox, install_kubectl])
 def install_minikube(c):
 
-    if check_whether_installed_via_brew_cask(c, "minikube"):
+    if check_whether_installed_via_brew(c, "minikube"):
         return
 
-    c.run("brew cask install minikube")
+    c.run("brew install minikube")
 
 @task
 def install_okta_cli(c):

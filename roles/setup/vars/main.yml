@@ -5,6 +5,8 @@ brew_applications:
   - zsh
   - jq
   - autojump
+  - docker-machine
+  - tmux
 
 cask_applications:
   - docker

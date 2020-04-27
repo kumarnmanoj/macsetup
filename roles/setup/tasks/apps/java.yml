@@ -20,4 +20,10 @@
   tags:
     - java
 
-
+- name: "Install Jdk 11"
+  homebrew_cask:
+    name: adoptopenjdk11
+    state: installed
+  tags:
+    - java
+    - java11

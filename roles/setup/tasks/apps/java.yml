@@ -12,6 +12,7 @@
     state: installed
   tags:
     - java
+  ignore_errors: yes
 
 - name: "Install maven"
   homebrew:
@@ -19,6 +20,7 @@
     state: installed
   tags:
     - java
+  ignore_errors: yes
 
 - name: "Install Jdk 11"
   homebrew_cask:
@@ -27,3 +29,4 @@
   tags:
     - java
     - java11
+  ignore_errors: yes

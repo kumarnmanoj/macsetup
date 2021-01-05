@@ -12,6 +12,7 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ cask_applications }}"
+  ignore_errors: yes
 
 - name: Setup java tools
   include: apps/java.yml

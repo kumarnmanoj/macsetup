@@ -1,0 +1,5 @@
+docker
+vagrant
+adoptopenjdk8
+adoptopenjdk11
+adoptopenjdk14

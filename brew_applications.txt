@@ -1,0 +1,11 @@
+wget
+telnet
+zsh
+jq
+autojump
+docker-machine
+tmux
+tree
+neovim
+jenv
+maven

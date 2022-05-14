@@ -5,4 +5,4 @@ set -e
 ./homebrew.sh
 ./terminalApps.sh
 ./python.sh
-./k8s.sh
+#./k8s.sh

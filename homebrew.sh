@@ -2,7 +2,10 @@
 
 set -e
 
-if [[ ! -f "/usr/local/bin/brew" ]]; then
+which brew
+BREW_CHECK_RESULT=$?
+
+if [[ $BREW_CHECK_RESULT -ne 0 ]]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
